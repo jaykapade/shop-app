@@ -5,13 +5,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-  height: 10vh;
-`
-const Wrapper = styled.div`
-  padding: 1rem 2rem;
-
+  min-height: 7vh;
+  padding: 0rem 2rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `
 const Left = styled.div`
   flex: 1;
@@ -56,26 +54,24 @@ const MenuItem = styled.div`
 const NavBar = () => {
   return (
     <Container>
-      <Wrapper>
-        <Left>
-          <Language>EN</Language>
-          <SearchContainer>
-            <Input /> <Search style={{ color: grey }} />
-          </SearchContainer>
-        </Left>
-        <Center>
-          <Logo>GUCCI</Logo>
-        </Center>
-        <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
-          <MenuItem>
-            <Badge badgeContent={0} color="primary">
-              <ShoppingCartOutlined />
-            </Badge>
-          </MenuItem>
-        </Right>
-      </Wrapper>
+      <Left>
+        <Language>EN</Language>
+        <SearchContainer>
+          <Input /> <Search style={{ color: grey }} />
+        </SearchContainer>
+      </Left>
+      <Center>
+        <Logo>GUCCI</Logo>
+      </Center>
+      <Right>
+        <MenuItem>REGISTER</MenuItem>
+        <MenuItem>SIGN IN</MenuItem>
+        <MenuItem>
+          <Badge badgeContent={0} color="primary">
+            <ShoppingCartOutlined />
+          </Badge>
+        </MenuItem>
+      </Right>
     </Container>
   )
 }
