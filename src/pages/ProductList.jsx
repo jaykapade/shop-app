@@ -5,18 +5,22 @@ import Announcement from '../components/Announcement'
 import Products from '../components/Products'
 import Newsletter from '../components/Newsletter'
 import Footer from '../components/Footer'
+import { mobile } from '../responsive'
 
 const Container = styled.div``
 
 const Title = styled.h1`
   margin: 1rem 2rem;
+  ${mobile({ margin: '1rem' })}
 `
 const FilterContainer = styled.div`
   display: flex;
   justify-content: space-between;
 `
 const Filter = styled.div`
+  flex: 1;
   margin: 1rem;
+  ${mobile({ flexDirection: 'column' })}
 `
 
 const FilterText = styled.span`
@@ -28,6 +32,8 @@ const FilterText = styled.span`
 const Select = styled.select`
   padding: 1rem 2rem;
   margin-right: 2rem;
+  width: 15%;
+  ${mobile({ margin: '0.5rem', padding: '1rem', width: '80%' })}
 `
 const Option = styled.option``
 

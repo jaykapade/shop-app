@@ -5,30 +5,40 @@ import Announcement from '../components/Announcement'
 import Footer from '../components/Footer'
 import NavBar from '../components/NavBar'
 import Newsletter from '../components/Newsletter'
+import { mobile } from '../responsive'
 
 const Container = styled.div``
 const Wrapper = styled.div`
   padding: 2rem;
+  ${mobile({ padding: '0.5rem' })}
 `
 const Title = styled.h1`
   font-weight: 300;
   text-align: center;
+  ${mobile({ marginBottom: '1rem' })}
 `
 const Top = styled.div`
   display: flex;
+
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  ${mobile({ padding: '0rem' })}
 `
 const TopButton = styled.button`
   padding: 1rem;
+  height: 100%;
   cursor: pointer;
-  border: ${(props) => props.type === 'filled' && 'none'};
+  /* border: ${(props) => props.type === 'filled' && 'none'}; */
   background-color: ${(props) =>
     props.type === 'filled' ? 'black' : 'transparent'};
   color: ${(props) => props.type === 'filled' && 'white'};
+
+  ${mobile({ padding: '0.5rem' })}
 `
-const TopTexts = styled.div``
+const TopTexts = styled.div`
+  ${mobile({ display: 'none' })}
+`
 const TopText = styled.span`
   text-decoration: underline;
   cursor: pointer;
@@ -38,6 +48,7 @@ const TopText = styled.span`
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({ flexDirection: 'column' })}
 `
 const Info = styled.div`
   flex: 3;
@@ -50,11 +61,13 @@ const Product = styled.div`
 const ProductDetail = styled.div`
   flex: 2;
   display: flex;
+  align-items: center;
 `
 const Image = styled.img`
   width: 20rem;
   height: 20rem;
   object-fit: cover;
+  ${mobile({ width: '10rem', height: '10rem' })}
 `
 const Details = styled.div`
   padding: 3rem 2rem;
@@ -62,11 +75,14 @@ const Details = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+
+  ${mobile({ padding: '0rem 2rem', fontSize: '1.4rem' })}
 `
 const ProductName = styled.span``
 const ProductId = styled.span``
 const Color = styled.span`
   display: flex;
+  align-items: center;
 `
 const ProductColor = styled.div`
   width: 2rem;
@@ -74,6 +90,7 @@ const ProductColor = styled.div`
   background-color: ${(props) => props.color};
   border-radius: 50%;
   margin: 0 1rem;
+  ${mobile({ width: '1rem', height: '1rem', margin: '0 0.5rem' })}
 `
 const ProductSize = styled.span``
 
@@ -100,11 +117,18 @@ const Amount = styled.div`
   align-items: center;
   justify-content: center;
   margin: 0 0.5rem;
+  ${mobile({
+    width: '2rem',
+    height: '2rem',
+    borderRadius: '0.4rem',
+    fontSize: '1.6rem',
+  })}
 `
 
 const ProductPrice = styled.div`
   font-size: 3rem;
   font-weight: 200;
+  ${mobile({ fontSize: '2.4rem' })}
 `
 const Hr = styled.hr`
   background-color: #eee;
@@ -115,17 +139,21 @@ const Summary = styled.div`
   flex: 1;
   border: 0.5px solid lightgray;
   padding: 3rem;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 `
 const SummaryTitle = styled.h1`
   font-weight: 400;
+  ${mobile({ fontSize: '3rem' })}
 `
 const SummaryItem = styled.div`
-  margin: 3rem 0rem;
+  /* margin: 3rem 0rem; */
   display: flex;
   justify-content: space-between;
   font-weight: ${(props) => props.type === 'total' && 600};
   font-size: ${(props) => props.type === 'total' && '2.4rem'};
+  ${mobile({ margin: '1.5rem' })}
 `
 const SummaryItemText = styled.span``
 const SummaryItemPrice = styled.span``
@@ -134,11 +162,15 @@ const Button = styled.button`
   background-color: black;
   color: white;
   font-weight: 500;
-  position: absolute;
-  bottom: 0%;
-  width: 80%;
+  width: 100%;
+
+  /* position: absolute; */
+  /* bottom: 0%;
+  
   left: 10%;
-  bottom: 5%;
+  bottom: 5%; */
+
+  ${mobile({ position: 'static', width: '100%' })}
 `
 
 const Cart = () => {
