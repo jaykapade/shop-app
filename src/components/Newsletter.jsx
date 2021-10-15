@@ -1,6 +1,7 @@
 import { Send } from '@material-ui/icons'
 import React from 'react'
 import styled from 'styled-components'
+import { mobile } from '../responsive'
 
 const Container = styled.div`
   height: 60vh;
@@ -13,23 +14,26 @@ const Container = styled.div`
 const Title = styled.h1`
   font-size: 7rem;
   margin-bottom: 2rem;
+  ${mobile({ fontSize: '4rem' })}
 `
 const Description = styled.div`
   font-size: 2.4rem;
   font-weight: 500;
   margin-bottom: 2rem;
+  ${mobile({ fontSize: '1.6rem' })}
 `
 const InputContainer = styled.div`
   width: 50%;
   height: 4rem;
   background-color: white;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 `
 const Input = styled.input`
   border: none;
   flex: 8;
-  padding-left: 2.8rem;
+  padding: 1rem 0rem 1rem 2.8rem;
+  ${mobile({ padding: '1rem 0rem 1rem 0.5rem' })}
 `
 const Button = styled.button`
   flex: 1;
@@ -38,6 +42,7 @@ const Button = styled.button`
   color: white;
   height: 100%;
   width: 100%;
+  ${mobile({ padding: '1rem' })}
 `
 
 const Newsletter = () => {

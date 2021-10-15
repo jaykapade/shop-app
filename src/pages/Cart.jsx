@@ -114,8 +114,8 @@ const Hr = styled.hr`
 const Summary = styled.div`
   flex: 1;
   border: 0.5px solid lightgray;
-  padding: 3rem 6rem;
-  height: 50vh;
+  padding: 3rem;
+  position: relative;
 `
 const SummaryTitle = styled.h1`
   font-weight: 400;
@@ -130,11 +130,15 @@ const SummaryItem = styled.div`
 const SummaryItemText = styled.span``
 const SummaryItemPrice = styled.span``
 const Button = styled.button`
-  width: 100%;
-  padding: 1rem;
+  padding: 1.6rem;
   background-color: black;
   color: white;
   font-weight: 500;
+  position: absolute;
+  bottom: 0%;
+  width: 80%;
+  left: 10%;
+  bottom: 5%;
 `
 
 const Cart = () => {

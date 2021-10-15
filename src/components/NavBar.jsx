@@ -3,6 +3,7 @@ import { grey } from '@material-ui/core/colors'
 import { Search, ShoppingCartOutlined } from '@material-ui/icons'
 import React from 'react'
 import styled from 'styled-components'
+import { mobile } from '../responsive'
 
 const Container = styled.div`
   min-height: 7vh;
@@ -10,6 +11,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  ${mobile({ padding: '0 0.5rem' })}
 `
 const Left = styled.div`
   flex: 1;
@@ -19,6 +21,7 @@ const Left = styled.div`
 const Language = styled.span`
   font-size: 1.4rem;
   cursor: pointer;
+  ${mobile({ display: 'none' })}
 `
 const SearchContainer = styled.div`
   border: 0.1rem solid lightgray;
@@ -26,9 +29,11 @@ const SearchContainer = styled.div`
   align-items: center;
   margin-left: 2.5rem;
   padding: 0.5rem;
+  ${mobile({ marginLeft: '0rem' })}
 `
 const Input = styled.input`
   border: none;
+  ${mobile({ width: '80%' })}
 `
 
 const Center = styled.div`
@@ -37,12 +42,14 @@ const Center = styled.div`
 const Logo = styled.h1`
   font-weight: bold;
   text-align: center;
+  ${mobile({ fontSize: '2rem' })}
 `
 const Right = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  ${mobile({ flex: '2' })}
 `
 const MenuItem = styled.div`
   font-size: 1.4rem;
@@ -57,7 +64,7 @@ const NavBar = () => {
       <Left>
         <Language>EN</Language>
         <SearchContainer>
-          <Input /> <Search style={{ color: grey }} />
+          <Input placeholder="Search" /> <Search style={{ color: grey }} />
         </SearchContainer>
       </Left>
       <Center>

@@ -9,11 +9,13 @@ import {
 } from '@material-ui/icons'
 import React from 'react'
 import styled from 'styled-components'
+import { mobile } from '../responsive'
 
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
   height: 30vh;
+  flex-wrap: wrap;
 `
 const Left = styled.div`
   flex: 1;
@@ -63,6 +65,7 @@ const Payment = styled.img`
 const Center = styled.div`
   flex: 1;
   padding: 2rem;
+  ${mobile({ display: 'none' })}
 `
 const Title = styled.h1`
   margin-bottom: 3rem;

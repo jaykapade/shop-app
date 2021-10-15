@@ -80,7 +80,7 @@ export const popularProducts = [
   {
     id: 7,
     img:
-      'https://lh3.googleusercontent.com/proxy/GK2ptzlha-PTdOXSakaJig5UmDnMeiUPbC7JN3G9pAVv16enAsQ4SOzkGqDoF-lbYJ2FTFz0kOSIPBpiw7cjlY7svBpSbQORHdN9gTb6Cxkcn8FqykNPQyW6SiFV2UwuHQ09-WuXpWAx6Lw',
+      'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=415&q=80',
   },
   {
     id: 8,

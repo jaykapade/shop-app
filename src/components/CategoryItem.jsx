@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import { mobile } from '../responsive'
 
 const Container = styled.div`
-  flex: 1;
+  flex: 1 1 40rem;
   margin: 0.3rem;
   height: 70vh;
   position: relative;
+  ${mobile({ margin: '0rem' })}
 `
 const Image = styled.img`
   width: 100%;

@@ -5,6 +5,7 @@ import {
 } from '@material-ui/icons'
 import React from 'react'
 import styled from 'styled-components'
+import { mobile } from '../responsive'
 
 const Info = styled.div`
   opacity: 0;
@@ -24,7 +25,7 @@ const Info = styled.div`
 `
 
 const Container = styled.div`
-  flex: 1;
+  flex: 1 1 40rem;
   margin: 0.5rem;
   min-width: 28rem;
   height: 35rem;
@@ -33,7 +34,7 @@ const Container = styled.div`
   justify-content: center;
   background-color: #f5fbfd;
   position: relative;
-
+  ${mobile({ margin: '0' })}
   &:hover ${Info} {
     opacity: 1;
   }
