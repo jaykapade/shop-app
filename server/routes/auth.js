@@ -12,6 +12,7 @@ router.post("/register", async (req, res) => {
       req.body.password,
       process.env.PASS_SECRET
     ).toString(),
+    // TODO: if you get time set isAdmin field here/
   });
   try {
     const savedUser = await user.save();
