@@ -55,23 +55,28 @@ router.get("/find/:id", async (req, res) => {
 });
 
 //* Get All Products : limit set to 5
-router.get("/", verifyTokenAndAdmin, async (req, res) => {
+router.get("/", async (req, res) => {
   const qNew = req.query.new;
   const qCategory = req.query.category;
   try {
     let products;
-    console.log(qNew);
-    console.log(qCategory);
-    if (qNew && qCategory === false) {
-      products = await Product.find().sort({ createdAt: -1 }).limit(5);
-    } else if (qCategory && qNew === false) {
-      products = await Product.find({ categories: { $in: [qCategory] } });
-    } else if (qNew && qCategory) {
+    // console.log(qNew);
+    // console.log(qCategory);
+
+    if (qNew && qCategory) {
       products = await Product.find({ categories: { $in: [qCategory] } }).sort({
         createdAt: -1,
       });
+      // console.log("multi");
+    } else if (qNew) {
+      products = await Product.find().sort({ createdAt: -1 }).limit(5);
+      // console.log("new");
+    } else if (qCategory) {
+      products = await Product.find({ categories: { $in: [qCategory] } });
+      // console.log("Category");
     } else {
       products = await Product.find();
+      // console.log("All");
     }
 
     res.status(200).json(products);
