@@ -9,6 +9,8 @@ import { mobile } from "../responsive";
 import { useLocation } from "react-router";
 
 import { publicRequest } from "../requestMethods";
+import { addProduct } from "../redux/cartRedux";
+import { useDispatch } from "react-redux";
 
 const Container = styled.div``;
 
@@ -69,6 +71,7 @@ const FilterColor = styled.div`
   background-color: ${(props) => props.color};
   margin-right: 0.5rem;
   cursor: pointer;
+  border: 1px solid black;
 `;
 const FilterSize = styled.select`
   margin-left: 1rem;
@@ -116,14 +119,18 @@ const Product = () => {
 
   const [productData, setProductData] = useState({});
   const [quantity, setQuantity] = useState(1);
-  const [color, setColor] = useState(1);
-  const [size, setSize] = useState(1);
+  const [color, setColor] = useState();
+  const [size, setSize] = useState();
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getProduct = async () => {
       try {
         const res = await publicRequest.get(`/products/find/${id}`);
         setProductData(res.data.product);
+        setColor(res.data.product.color[0]);
+        setSize(res.data.product.size[0]);
       } catch (err) {}
     };
     getProduct();
@@ -139,6 +146,7 @@ const Product = () => {
 
   const handleSubmit = () => {
     //* Update Cart
+    dispatch(addProduct({ ...productData, quantity, color, size }));
   };
 
   return (
