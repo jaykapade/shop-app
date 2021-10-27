@@ -28,7 +28,7 @@ const Products = ({ cat, filters, sort }) => {
         );
 
         setProducts(res.data);
-        console.log(res.data[0].createdAt.split("T")[0]);
+        // console.log(res.data[0].createdAt.split("T")[0]);
       } catch (err) {}
     };
 
@@ -48,7 +48,7 @@ const Products = ({ cat, filters, sort }) => {
 
   useEffect(() => {
     if (sort === "latest") {
-      console.log("reaching latest");
+      // console.log("reaching latest");
       setFilteredProducts(
         // products
 
