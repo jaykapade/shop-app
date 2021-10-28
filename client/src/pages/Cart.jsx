@@ -199,11 +199,14 @@ const Cart = () => {
           tokenId: stripeToken.id,
           amount: 100,
         });
-        history.push("/success", { data: res.data });
+        history.push("/success", {
+          stripeData: res.data,
+          products: cart,
+        });
       } catch (err) {}
     };
     stripeToken && makeRequest();
-  }, [stripeToken, cart.total, history]);
+  }, [stripeToken, cart, history]);
 
   return (
     <Container>
