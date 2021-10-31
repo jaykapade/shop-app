@@ -3,25 +3,36 @@ import "./topbar.css";
 import { NotificationsNone, Language, Settings } from "@material-ui/icons";
 
 export default function Topbar() {
+  const user = JSON.parse(
+    JSON.parse(localStorage.getItem("persist:root")).user
+  ).currentUser;
+
   return (
     <div className="topbar">
       <div className="topbarWrapper">
         <div className="topLeft">
-          <span className="logo">lamaadmin</span>
+          <span className="logo">GUCCI</span>
         </div>
         <div className="topRight">
           <div className="topbarIconContainer">
             <NotificationsNone />
-            <span className="topIconBadge">2</span>
+            <span className="topIconBadge">0</span>
           </div>
           <div className="topbarIconContainer">
             <Language />
-            <span className="topIconBadge">2</span>
+            <span className="topIconBadge">1</span>
           </div>
           <div className="topbarIconContainer">
             <Settings />
           </div>
-          <img src="https://images.pexels.com/photos/1526814/pexels-photo-1526814.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" className="topAvatar" />
+          <img
+            src={
+              user.img ||
+              "https://www.vhv.rs/dpng/d/421-4213265_transparent-no-avatar-png-avatar-user-login-icon.png"
+            }
+            alt=""
+            className="topAvatar"
+          />
         </div>
       </div>
     </div>
