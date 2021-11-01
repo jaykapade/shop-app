@@ -15,13 +15,16 @@ function App() {
   const admin = JSON.parse(
     JSON.parse(localStorage.getItem("persist:root")).user
   ).currentUser.isAdmin;
+
+  // console.log(admin);
   return (
     <Router>
       <Switch>
         <Route path="/login">
           <Login />
         </Route>
-        {admin && (
+
+        {admin === true && (
           <>
             <Topbar />
             <div className="container">
