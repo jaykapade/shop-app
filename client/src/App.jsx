@@ -16,11 +16,13 @@ import {
 
 const App = () => {
   const user = useSelector((state) => state.user.currentUser);
+  // console.log(user);
   return (
     <Router>
       <Switch>
+        <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
         <Route path="/" exact>
-          <Home />
+          {!user ? <Redirect to="/login" /> : <Home />}
         </Route>
         <Route path="/products/:category">
           <ProductList />
@@ -31,7 +33,7 @@ const App = () => {
         <Route path="/cart">
           <Cart />
         </Route>
-        <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
+
         <Route path="/register">
           {user ? <Redirect to="/" /> : <Register />}
         </Route>
